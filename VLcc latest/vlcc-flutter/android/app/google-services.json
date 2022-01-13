@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "850746334074",
+    "project_id": "vlcc-55fdf",
+    "storage_bucket": "vlcc-55fdf.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:850746334074:android:0a6fc67d3bd6107f5914c3",
+        "android_client_info": {
+          "package_name": "com.example.vlcc"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "850746334074-88unr46a61uf79ujmvennmfie97g21fv.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAtyv95cbpGmEcotqBHOnBCU5l0luo_wD0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "850746334074-88unr46a61uf79ujmvennmfie97g21fv.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
