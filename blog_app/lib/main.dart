@@ -1,5 +1,6 @@
 import 'package:blog_app/home_page.dart';
 import 'package:blog_app/user.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'blog_post.dart';
@@ -32,14 +33,18 @@ void main() {
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp({Key? key}) : super(key: key);
+  const MyApp({Key key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     
     return MultiProvider(
       providers: [
-        Provider<List<BlogPost>>(create: (context) => _blogPosts),
+        FutureProvider<List<BlogPost>>(
+          initialData: const [],
+          create: (context) => blogPosts(),
+        ),  
+      //  Provider<List<BlogPost>>(create: (context) => _blogPosts),
         Provider<User>(
             create: (context) => User(
                 name: 'Vikas Tripathi',
@@ -57,10 +62,10 @@ class MyApp extends StatelessWidget {
 
 final _blogPosts = [
   BlogPost(
-    title: 'Kangan - Ranjit Bawa?',
+    title: 'What is provider?',
     publishedDate: DateTime(2022, 1, 11),
     body:
-        'Ranjit Bawa - Kangan | New Punjabi Songs 2018 | Full Video | Latest Punjabi Song 2018 | Jass RecordsSubscribe To Our Channel',
+        "state management technique uses the concept of inherited widget"
   ),
   BlogPost(
     title: 'SHEESHA : Pari Pandher?',
@@ -69,3 +74,9 @@ final _blogPosts = [
         'Brand B Presents Latest Punjabi Songs "SHEESHA" Sung By Pari Pandher Ft Jordan Sandhu, Penned Down & Composed By Bunty.',
   ),
 ];
+
+   Future<List<BlogPost>> blogPosts() {
+    return FirebaseFirestore.instance.collection('blogs').get().then((value) {
+      return value.docs.map((e) => BlogPost.fromDocument(e)).toList();
+    });
+  }

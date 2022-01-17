@@ -8,7 +8,7 @@ import 'blog_scaffold.dart';
 import 'constrained_center.dart';
 
 class HomePage extends StatelessWidget {
-  const HomePage({Key? key}) : super(key: key);
+  const HomePage({Key key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -18,14 +18,14 @@ class HomePage extends StatelessWidget {
       children: [
         ConstrainedCentre(
           child: CircleAvatar(
-            backgroundImage: NetworkImage(user.profilePicture!),
+            backgroundImage: NetworkImage(user.profilePicture),
             radius: 72,
           ),
         ),
         const SizedBox(height: 18),
         ConstrainedCentre(
           child: SelectableText(
-            user.name!,
+            user.name,
             style: Theme.of(context).textTheme.headline1,
           ),
         ),
@@ -47,7 +47,7 @@ class HomePage extends StatelessWidget {
 }
 
 class BlogListTile extends StatelessWidget {
-  final BlogPost? post;
+  final BlogPost post;
   BlogListTile({this.post});
 
   @override
@@ -58,7 +58,7 @@ class BlogListTile extends StatelessWidget {
         const SizedBox(height: 20),
         InkWell(
           child: Text(
-            post!.title!,
+            post.title,
             style: TextStyle(color: Colors.blueAccent.shade700),
           ),
           onTap: () {
@@ -71,11 +71,10 @@ class BlogListTile extends StatelessWidget {
         ),
       const SizedBox(height: 10),
         SelectableText(
-          post!.date,
+          post.date,
           style: Theme.of(context).textTheme.caption,
         ),
       ],
     );
   }
 }
-

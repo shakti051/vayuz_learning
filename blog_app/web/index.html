@@ -36,6 +36,27 @@
   <!-- This script installs service_worker.js to provide PWA functionality to
        application. For more information, see:
        https://developers.google.com/web/fundamentals/primers/service-workers -->
+       <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
+       
+       <script type="module">
+        // Import the functions you need from the SDKs you need
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.3/firebase-app.js";
+        // TODO: Add SDKs for Firebase products that you want to use
+        // https://firebase.google.com/docs/web/setup#available-libraries
+        
+        // Your web app's Firebase configuration
+        const firebaseConfig = {
+          apiKey: "AIzaSyCzEojAHbJZHLnB8Jf4E7VxBu69Oz-0etw",
+          authDomain: "flutter-blog-web-app-5a09c.firebaseapp.com",
+          projectId: "flutter-blog-web-app-5a09c",
+          storageBucket: "flutter-blog-web-app-5a09c.appspot.com",
+          messagingSenderId: "633222206081",
+          appId: "1:633222206081:web:b748956d22b34153277380"
+        };
+      // Initialize Firebase
+        const app = initializeApp(firebaseConfig);
+      </script>
+
   <script>
     var serviceWorkerVersion = null;
     var scriptLoaded = false;

@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 
 class BlogScaffold extends StatelessWidget {
-  final List<Widget>? children;
+  final List<Widget> children;
 
-  const BlogScaffold({Key? key, this.children}) : super(key: key);
+  const BlogScaffold({Key key, this.children}) : super(key: key);
   @override
   Widget build(BuildContext context) {
     
@@ -17,7 +17,7 @@ class BlogScaffold extends StatelessWidget {
           child: SingleChildScrollView(
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
-              children: children!,
+              children: children,
             ),
           ),
         ),
