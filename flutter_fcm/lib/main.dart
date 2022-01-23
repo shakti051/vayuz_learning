@@ -18,6 +18,7 @@ const AndroidNotificationChannel channel = AndroidNotificationChannel(
   Future<void> _firebaseMessagingBackgroundHandler(RemoteMessage message) async {
   await Firebase.initializeApp();
   print('A bg message just showed up :  ${message.messageId}');
+  
   }
 
 Future<void> main() async {
